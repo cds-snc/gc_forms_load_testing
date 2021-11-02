@@ -14,7 +14,9 @@ logging.basicConfig(level=logging.INFO)
 test_time = 6
 # How many concurrent users to test for?
 # threads x 25 = num of concurrent users
-threads = 40
+threads = 20
+# What test file are we using?
+test_file = 'locust_test_mail_list.py'
 
 def print_stat(type, name, req_count, median, avg, min, max, rps):
     return "%-7s %-50s %10s %9s %9s %9s %9s %10s" % (
@@ -80,7 +82,7 @@ def print_stats_exit(load_test_state):
                 round(reqs[k]["avg_response_time"], 2),
                 round(reqs[k]["min_response_time"], 2),
                 round(reqs[k]["max_response_time"], 2),
-                round(reqs[k]["total_rps"], 2),
+                round(reqs[k]["total_rps"], 2) * agg_results["threads"],
             )
         )
     total_rps = sum(
@@ -110,7 +112,7 @@ if __name__ == "__main__":
 
 
     lambda_payload = {
-        'locustfile': 'locust_test_file.py',
+        'locustfile': test_file,
         'host': 'https://forms-staging.cdssandbox.xyz',
         'num_users': 25,
         'spawn_rate': 5,
