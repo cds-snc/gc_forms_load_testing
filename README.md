@@ -31,7 +31,7 @@ All configurable options are located at the top of the `locust_swarm.py` file.
 `analysis.py`: Used as a post-processing script to verify if there was any data loss by analyzing failed form submissions and errors's returned vs silently dropped.
 
 - Run locust_swarm.py with a testfile that sends responses to the Vault.
-- Download the Vault Dynamodb contents (.sjon files) into a folder named 'dynamodb' at the root of the repo folder.
+- Download the Vault Dynamodb contents (.json files) into a folder named 'dynamodb' at the root of the repo folder.
 - Run 'analysis.py' and on completion the results will be printed in the terminal.
 
 ## Future Enhancements
