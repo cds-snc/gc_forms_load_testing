@@ -27,6 +27,7 @@ All configurable options are located at the top of the `locust_swarm.py` file.
 ## Utility Scripts
 
 `plotter.py`: A work in progress that never really got started. It would create a graph of the results similar to what is seen when running the Locust service locally.
+
 `analysis.py`: Used as a post-processing script to verify if there was any data loss by analyzing failed form submissions and errors's returned vs silently dropped.
 
 - Run locust_swarm.py with a testfile that sends responses to the Vault.
@@ -35,4 +36,4 @@ All configurable options are located at the top of the `locust_swarm.py` file.
 
 ## Future Enhancements
 
--[] Test_files could be loaded into a single test folder/lambda layer or passed through payload from terminal to Lambda call.
+- [ ] Test_files could be loaded into a single test folder/lambda layer or passed through payload from terminal to Lambda call.
