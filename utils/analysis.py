@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO)
 
 def load_database():
   db_entries = []
-  files = glob.glob("./dynamodb/*.json")
+  files = glob.glob("../dynamodb/*.json")
   for file_name in files:
     with open(file_name) as file:
       for line in file:
@@ -32,8 +32,8 @@ def checkIfDuplicates(listOfElems):
 ### Main
 if __name__ == "__main__":
   form_submissions = load_database()
-  thread_results = load_file("threads_output.json")
-  agg_results = load_file("aggregated_results.json")
+  thread_results = load_file("../threads_output.json")
+  agg_results = load_file("../aggregated_results.json")
 
   form_input = {"success":[], "failed":[]}
 
