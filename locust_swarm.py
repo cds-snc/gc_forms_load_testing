@@ -16,7 +16,7 @@ test_time = 6
 # threads x 25 = num of concurrent users
 threads = 20
 # What test file are we using?
-test_file = 'locust_test_mail_list.py'
+test_file_name = 'locust_test_mail_list.py'
 
 def print_stat(type, name, req_count, median, avg, min, max, rps):
     return "%-7s %-50s %10s %9s %9s %9s %9s %10s" % (
@@ -112,7 +112,7 @@ if __name__ == "__main__":
 
 
     lambda_payload = {
-        'locustfile': test_file,
+        'locustfile': f"./tests/{test_file_name}",
         'host': 'https://forms-staging.cdssandbox.xyz',
         'num_users': 25,
         'spawn_rate': 5,
